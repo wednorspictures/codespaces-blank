@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ФПИ Кошелёк</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    
+    <div id="notifications"></div>
+
+    <div class="banner">
+        <img src="fpi.png" alt="Логотип ФПИ">
+        <h1>ФПИ-BANK</h1>
+    </div>
+    <div class="container">
+        <div id="login">
+            <h2>Вход</h2>
+            <form id="loginForm">
+                <input type="text" id="loginUsername" placeholder="Имя пользователя" required>
+                <input type="password" id="loginPassword" placeholder="Пароль" required>
+                <button type="submit">Войти</button>
+            </form>
+            <p>Ещё нет аккаунта? <a id="toRegister">Регистрация</a></p>
+        </div>
+        <div id="register" style="display:none;">
+            <h2>Регистрация</h2>
+            <form id="registerForm">
+                <input type="text" id="username" placeholder="Имя пользователя" required>
+                <input type="password" id="password" placeholder="Пароль" required>
+                <input type="text" id="walletNumber" placeholder="Номер кошелька" required>
+                <button type="submit">Зарегистрироваться</button>
+            </form>
+        </div>
+        <div id="wallet" style="display:none;">
+            <h2>Ваш Кошелёк</h2>
+            
+            <img id="cardImage" src="card.png" alt="Изображение карты">
+            <p id="walletNumberDisplay"></p>
+            <p>Баланс: <span id="balance"></span> ₽</p>
+            <form id="transferForm">
+                <input type="text" id="recipientWallet" placeholder="Номер кошелька получателя" required>
+                <input type="number" id="amount" placeholder="Сумма" required>
+                <button type="submit">Перевести</button>
+            </form>
+
+            
+            <button id="tbankButton"></button>
+
+            
+            <div id="tbankModal">
+                <div id="tbankModalContent">
+                    <h3>Введите номер карты в Т-Банке</h3>
+                    <input type="text" id="tbankCardNumber" placeholder="Номер карты">
+                    <button id="sendButton">Отправить</button>
+                </div>
+            </div>
+
+            <h3>История транзакций</h3>
+            <ul id="history"></ul>
+        </div>
+    </div>
+
+    <script src="client.js"></script> 
+    <script src="script.js"></script> 
+</body>
+</html>
